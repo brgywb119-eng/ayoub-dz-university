@@ -1,26 +1,57 @@
 const express = require("express");
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-const publicDir = path.join(__dirname, "public");
+// حماية HTTP Headers
+app.use(helmet());
 
-app.use(express.json());
-
-app.use(express.static(publicDir));
-
-app.get("/", (req, res) => {
-  res.sendFile(path.join(publicDir, "index.html"));
+// منع كثرة الطلبات بشكل مبالغ فيه
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 300,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    error: "طلبات كثيرة، حاول بعد قليل."
+  }
 });
 
-app.get("/lessons/biologie-cellulaire.html", (req, res) => {
-  res.sendFile(path.join(publicDir, "lessons", "biologie-cellulaire.html"));
+app.use(limiter);
+
+// قراءة JSON بحجم محدود
+app.use(express.json({ limit: "100kb" }));
+
+// ملفات الموقع
+app.use(express.static(path.join(__dirname, "public")));
+
+// الصفحة الرئيسية
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+// حالة السيرفر
+app.get("/api/status", (req, res) => {
+  res.json({
+    status: "ok",
+    project: "Ayoub DZ University"
+  });
+});
+
+// أي صفحة غير موجودة
+app.use((req, res) => {
+  res.status(404).json({
+    error: "الصفحة غير موجودة"
+  });
 });
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log("=================================");
   console.log(" Ayoub DZ University");
-  console.log(" http://localhost:3000");
+  console.log(` http://localhost:${PORT}`);
+  console.log(" Protection: Helmet + Rate Limit");
   console.log("=================================");
 });
