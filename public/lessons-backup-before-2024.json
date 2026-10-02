@@ -1,0 +1,200 @@
+[
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "رياضيات",
+    "year": "L1",
+    "subject": "رياضيات",
+    "title": "رياضيات - موارد جامعية",
+    "type": "دروس وموارد",
+    "url": "https://fac.umc.edu.dz/fse/ofmath.php"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "رياضيات تطبيقية",
+    "year": "L1",
+    "subject": "رياضيات تطبيقية",
+    "title": "رياضيات تطبيقية - موارد جامعية",
+    "type": "دروس وموارد",
+    "url": "https://fac.umc.edu.dz/fse/ofmath.php"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "إعلام آلي",
+    "year": "L1",
+    "subject": "إعلام آلي",
+    "title": "كتالوج دروس الرياضيات والإعلام الآلي",
+    "type": "دروس وموارد جامعية",
+    "url": "https://fac.umc.edu.dz/"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "إعلام آلي",
+    "year": "L1",
+    "subject": "خوارزميات وبرمجة",
+    "title": "موارد الإعلام الآلي - UFMC1",
+    "type": "دروس وموارد",
+    "url": "https://fac.umc.edu.dz/"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "رياضيات",
+    "year": "L1",
+    "subject": "تحليل",
+    "title": "Analyse - دروس وTD جامعية",
+    "type": "دروس وTD",
+    "url": "https://fac.umc.edu.dz/fse/sp%20licence%20math.php"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "رياضيات",
+    "year": "L1",
+    "subject": "جبر",
+    "title": "Algèbre - دروس وTD جامعية",
+    "type": "دروس وTD",
+    "url": "https://fac.umc.edu.dz/fse/sp%20licence%20math.php"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "رياضيات",
+    "year": "L2",
+    "subject": "تحليل",
+    "title": "Analyse 3 و Analyse 4",
+    "type": "برنامج ودروس",
+    "url": "https://fac.umc.edu.dz/fse/assets/img/dmath.pdf"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "رياضيات",
+    "year": "L2",
+    "subject": "جبر",
+    "title": "Algèbre 3 و Algèbre 4",
+    "type": "برنامج ودروس",
+    "url": "https://fac.umc.edu.dz/fse/assets/img/dmath.pdf"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "رياضيات",
+    "year": "L2",
+    "subject": "احتمالات",
+    "title": "Probabilités",
+    "type": "برنامج ودروس",
+    "url": "https://fac.umc.edu.dz/fse/assets/img/dmath.pdf"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "رياضيات",
+    "year": "L2",
+    "subject": "تحليل عددي",
+    "title": "Analyse numérique",
+    "type": "برنامج ودروس",
+    "url": "https://fac.umc.edu.dz/fse/assets/img/dmath.pdf"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "إعلام آلي",
+    "year": "L1",
+    "subject": "إعلام آلي",
+    "title": "Informatique 1",
+    "type": "PDF درس وتمارين",
+    "url": "https://fac.umc.edu.dz/fstech/cours/ST/Informatique1_Mezhoud.pdf"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "إعلام آلي",
+    "year": "L1",
+    "subject": "خوارزميات",
+    "title": "Introduction à l'Algorithmique",
+    "type": "درس",
+    "url": "https://fac.umc.edu.dz/fstech/cours/ST/Informatique1_Mezhoud.pdf"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "رياضيات",
+    "year": "L1",
+    "subject": "تحليل 1",
+    "title": "Analyse 1 - Cours",
+    "type": "درس PDF",
+    "url": "https://dmath.univ-tlemcen.dz/fr/pages/195/l-info-ing-info-26-27"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "رياضيات",
+    "year": "L1",
+    "subject": "تحليل 1",
+    "title": "Analyse 1 - TD",
+    "type": "TD",
+    "url": "https://dmath.univ-tlemcen.dz/fr/pages/195/l-info-ing-info-26-27"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "رياضيات",
+    "year": "L1",
+    "subject": "تحليل 1",
+    "title": "Analyse 1 - Corrigés",
+    "type": "تصحيح TD",
+    "url": "https://dmath.univ-tlemcen.dz/fr/pages/195/l-info-ing-info-26-27"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "رياضيات",
+    "year": "L1",
+    "subject": "جبر 1",
+    "title": "Algèbre 1 - Cours",
+    "type": "درس PDF",
+    "url": "https://dmath.univ-tlemcen.dz/fr/pages/195/l-info-ing-info-26-27"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "رياضيات",
+    "year": "L1",
+    "subject": "جبر 1",
+    "title": "Algèbre 1 - TD وتصحيحات",
+    "type": "TD + تصحيح",
+    "url": "https://dmath.univ-tlemcen.dz/fr/pages/195/l-info-ing-info-26-27"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "إعلام آلي",
+    "year": "L1",
+    "subject": "خوارزميات",
+    "title": "Algorithmique et Structures de Données 1",
+    "type": "درس + تمارين",
+    "url": "https://dspace.univ-usto.dz/items/e781ad69-81fb-4d74-8194-5525392b7173"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "إعلام آلي",
+    "year": "L1",
+    "subject": "برمجة",
+    "title": "Algorithmique et Structures de Données 1",
+    "type": "درس + تمارين محلولة",
+    "url": "https://dspace.univ-usto.dz/items/8ea7c1d1-1ae8-4f69-9d03-a7f0483ed0dc"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "إعلام آلي",
+    "year": "L1",
+    "subject": "رياضيات للإعلام الآلي",
+    "title": "Mathématiques pour l'informatique",
+    "type": "كتاب PDF + تمارين",
+    "url": "https://di.univ-blida.dz/xmlui/handle/123456789/39915"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "رياضيات",
+    "year": "L1",
+    "subject": "جبر",
+    "title": "Algèbre L1 - Cours et exercices",
+    "type": "درس + تمارين",
+    "url": "https://e-biblio.univ-mosta.dz/items/aaff212b-7581-4087-bb68-2f2770440450"
+  },
+  {
+    "field": "رياضيات وإعلام آلي",
+    "specialty": "إعلام آلي",
+    "year": "L2",
+    "subject": "هياكل البيانات",
+    "title": "Algorithmique et Structures de Données 2",
+    "type": "درس",
+    "url": "https://dspace.univ-usto.dz/items/aa16c63e-03e5-4388-8ec9-15cb91520e21"
+  }
+]

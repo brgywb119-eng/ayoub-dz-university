@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ayoub DZ University</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f3f6fa;
+      color: #172033;
+    }
+
+    header {
+      background: linear-gradient(135deg, #075985, #0e7490);
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1000px;
+      margin: 25px auto;
+    }
+
+    .search-box {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    }
+
+    .search-box h2 {
+      margin-top: 0;
+      color: #075985;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 7px;
+      font-weight: bold;
+    }
+
+    select,
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 16px;
+      background: white;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      border: 0;
+      border-radius: 10px;
+      background: #075985;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0e7490;
+    }
+
+    #results {
+      margin-top: 25px;
+    }
+
+    .lesson-card {
+      background: white;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.07);
+    }
+
+    .lesson-card h3 {
+      margin-top: 0;
+      color: #075985;
+    }
+
+    .lesson-card p {
+      margin: 8px 0;
+    }
+
+    .pdf-button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 11px 18px;
+      background: #16a34a;
+      color: white;
+      text-decoration: none;
+      border-radius: 9px;
+      font-weight: bold;
+    }
+
+    .pdf-button:hover {
+      background: #15803d;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #64748b;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎓 Ayoub DZ University</h1>
+  <p>منصة تعليمية جزائرية مجانية للطلبة</p>
+</header>
+
+<div class="container">
+
+  <div class="search-box">
+
+    <h2>🔎 البحث عن الدروس والملخصات</h2>
+
+    <label for="field">المجال</label>
+    <select id="field">
+      <option value="">اختر المجال</option>
+    </select>
+
+    <label for="specialty">التخصص</label>
+    <select id="specialty">
+      <option value="">اختر التخصص</option>
+    </select>
+
+    <label for="year">السنة</label>
+    <select id="year">
+      <option value="">اختر السنة</option>
+      <option value="L1">L1</option>
+      <option value="L2">L2</option>
+      <option value="L3">L3</option>
+      <option value="Master 1">Master 1</option>
+      <option value="Master 2">Master 2</option>
+    </select>
+
+    <label for="subject">المادة / الدرس</label>
+    <input
+      id="subject"
+      type="text"
+      placeholder="مثال: كيمياء، رياضيات، قانون..."
+    >
+
+    <button onclick="searchLessons()">
+      🔎 ابحث عن دروس وملخصات PDF
+    </button>
+
+  </div>
+
+  <div id="results">
+    <div class="lesson-card">
+      <h3>📚 النتائج</h3>
+      <p>اختر المجال والتخصص والسنة ثم ابحث عن الدروس.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Ayoub DZ University 🇩🇿
+</footer>
+
+<script>
+
+async function loadFields() {
+
+  const fieldSelect = document.getElementById("field");
+
+  try {
+
+    const response = await fetch("/fields.json");
+
+    if (!response.ok) {
+      throw new Error("تعذر تحميل المجالات");
+    }
+
+    const fields = await response.json();
+
+    fields.forEach(field => {
+
+      const option = document.createElement("option");
+
+      option.value = field;
+      option.textContent = field;
+
+      fieldSelect.appendChild(option);
+
+    });
+
+  } catch (error) {
+
+    console.error(error);
+
+    fieldSelect.innerHTML = `
+      <option value="">تعذر تحميل المجالات</option>
+    `;
+
+  }
+}
+
+
+async function searchLessons() {
+
+  const resultsBox = document.getElementById("results");
+
+  const field =
+    document.getElementById("field").value;
+
+  const specialty =
+    document.getElementById("specialty").value;
+
+  const year =
+    document.getElementById("year").value;
+
+  const subject =
+    document.getElementById("subject").value;
+
+  resultsBox.innerHTML = `
+    <div class="lesson-card loading">
+      ⏳ جاري البحث...
+    </div>
+  `;
+
+  try {
+
+    const response =
+      await fetch("/lessons.json");
+
+    if (!response.ok) {
+      throw new Error("ملف lessons.json غير موجود");
+    }
+
+    const lessons =
+      await response.json();
+
+    const normalize = text =>
+      String(text || "")
+        .toLowerCase()
+        .trim();
+
+    const filtered = lessons.filter(item => {
+
+      const fieldOK =
+        !field ||
+        normalize(item.field).includes(normalize(field)) ||
+        normalize(field).includes(normalize(item.field));
+
+      const specialtyOK =
+        !specialty ||
+        normalize(item.specialty).includes(normalize(specialty)) ||
+        normalize(specialty).includes(normalize(item.specialty));
+
+      const yearOK =
+        !year ||
+        normalize(item.year) === normalize(year);
+
+      const subjectOK =
+        !subject ||
+        normalize(item.subject).includes(normalize(subject)) ||
+        normalize(item.title).includes(normalize(subject));
+
+      return (
+        fieldOK &&
+        specialtyOK &&
+        yearOK &&
+        subjectOK
+      );
+
+    });
+
+    if (filtered.length === 0) {
+
+      resultsBox.innerHTML = `
+        <div class="lesson-card">
+          <h2>📚 النتائج</h2>
+          <p>❌ ما لقيناش ملف مطابق حاليا.</p>
+          <p>
+            جرّب تغيير المادة أو السنة.
+          </p>
+        </div>
+      `;
+
+      return;
+    }
+
+    resultsBox.innerHTML = `
+      <h2>📚 النتائج (${filtered.length})</h2>
+
+      ${filtered.map(item => `
+
+        <div class="lesson-card">
+
+          <h3>${item.title}</h3>
+
+          <p>📚 المادة: ${item.subject}</p>
+
+          <p>🎓 السنة: ${item.year}</p>
+
+          <p>📄 النوع: ${item.type}</p>
+
+          <a
+            class="pdf-button"
+            href="${item.url}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            📥 فتح PDF
+          </a>
+
+        </div>
+
+      `).join("")}
+    `;
+
+  } catch (error) {
+
+    console.error(error);
+
+    resultsBox.innerHTML = `
+      <div class="lesson-card">
+        <h2>❌ خطأ</h2>
+        <p>${error.message}</p>
+      </div>
+    `;
+
+  }
+
+}
+
+const fieldSelect = document.getElementById("field");
+const specialtySelect = document.getElementById("specialty");
+
+async function loadSpecialties() {
+
+  try {
+
+    const response = await fetch("/specialties.json");
+
+    if (!response.ok) {
+      throw new Error("specialties.json غير موجود");
+    }
+
+    const specialties = await response.json();
+
+    fieldSelect.addEventListener("change", () => {
+
+      const selectedField = fieldSelect.value;
+
+      specialtySelect.innerHTML =
+        '<option value="">اختر التخصص</option>';
+
+      if (!selectedField) return;
+
+      const list = specialties[selectedField] || [];
+
+      list.forEach(specialty => {
+
+        const option = document.createElement("option");
+
+        option.value = specialty;
+        option.textContent = specialty;
+
+        specialtySelect.appendChild(option);
+
+      });
+
+    });
+
+  } catch (error) {
+
+    console.error(error);
+
+    specialtySelect.innerHTML =
+      '<option value="">تعذر تحميل التخصصات</option>';
+
+  }
+
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  loadFields();
+  loadSpecialties();
+
+});
+
+</script>
+
+</body>
+</html>

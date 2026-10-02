@@ -1,0 +1,499 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+.header {
+  background: #075ed7;
+  color: white;
+  padding: 18px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+button {
+  border: 0;
+  background: #075ed7;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.login {
+  background: white;
+  color: #075ed7;
+}
+
+.hero {
+  background: #075ed7;
+  color: white;
+  text-align: center;
+  padding: 75px 20px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  margin: 10px;
+}
+
+.hero p {
+  font-size: 20px;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-buttons button {
+  background: white;
+  color: #075ed7;
+}
+
+.hero-buttons .second {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 45px 20px;
+}
+
+.container > h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 35px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 5px 20px #00000010;
+}
+
+.card span {
+  font-size: 42px;
+}
+
+.card h3 {
+  font-size: 23px;
+}
+
+.card p {
+  color: #596579;
+  line-height: 1.7;
+  min-height: 55px;
+}
+
+.ai {
+  border: 2px solid #075ed7;
+}
+
+footer {
+  background: #172033;
+  color: white;
+  text-align: center;
+  padding: 35px 20px;
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header {
+    justify-content: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+}
+
+.university-area,
+.news {
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+.university-area h2,
+.news h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.search {
+  display: block;
+  width: 100%;
+  padding: 17px;
+  margin: 25px 0;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.filters select {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  font-size: 15px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.course {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px #00000010;
+  text-align: center;
+}
+
+.course span {
+  font-size: 40px;
+}
+
+.course p {
+  color: #657083;
+  line-height: 1.7;
+}
+
+.news-card {
+  background: white;
+  margin: 15px 0;
+  padding: 22px;
+  border-radius: 14px;
+  border-right: 5px solid #075ed7;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #0008;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.login-card input {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.login-card button:not(.close) {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.close {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  border: 0;
+  background: transparent;
+  color: #222;
+  font-size: 20px;
+}
+
+@media(max-width:700px) {
+  .filters,
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lesson-hero {
+  background: #075ed7;
+  color: white;
+  text-align: center;
+  padding: 55px 20px;
+}
+
+.lesson-hero h1 {
+  font-size: 36px;
+}
+
+.lessons-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.lesson-filter {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.lesson-filter input,
+.lesson-filter select {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  background: white;
+}
+
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.lesson-card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 5px 20px #00000010;
+}
+
+.lesson-card span {
+  font-size: 42px;
+}
+
+.lesson-card h3 {
+  font-size: 21px;
+}
+
+.lesson-card p {
+  color: #657083;
+  min-height: 30px;
+}
+
+@media(max-width:700px) {
+  .lesson-filter,
+  .lesson-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-hero h1 {
+    font-size: 29px;
+  }
+}
+
+.lesson-search {
+  margin-bottom: 35px;
+}
+
+.lesson-search input {
+  width: 100%;
+  padding: 17px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.lesson-content {
+  margin-top: 50px;
+  background: #eef4ff;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.real-lessons {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+}
+
+.real-lesson {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 15px #0001;
+}
+
+.lesson-icon {
+  font-size: 40px;
+}
+
+.real-lesson p {
+  color: #657083;
+}
+
+.lesson-view {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  line-height: 1.9;
+}
+
+.lesson-text {
+  margin: 25px 0;
+  padding: 20px;
+  background: #f7f9fc;
+  border-radius: 12px;
+}
+
+.empty {
+  text-align: center;
+  color: #667085;
+}
+
+@media(max-width:700px) {
+  .real-lessons {
+    grid-template-columns: 1fr;
+  }
+}
+
+.specialties {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin:25px 0 40px;
+}
+
+.specialties button {
+  min-height:70px;
+}
+
+.subject-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.subject {
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 5px 20px #00000010;
+}
+
+.subject-icon {
+  font-size:40px;
+}
+
+.subject p {
+  color:#667085;
+  line-height:1.7;
+}
+
+.summary {
+  background:#172033;
+  margin-right:5px;
+}
+
+.lesson-view {
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  line-height:2;
+}
+
+.lesson-view li {
+  margin:10px 0;
+}
+
+.search {
+  width:100%;
+  padding:17px;
+  border:1px solid #ddd;
+  border-radius:12px;
+  font-size:16px;
+  margin-bottom:30px;
+}
+
+@media(max-width:800px) {
+  .specialties {
+    grid-template-columns:1fr 1fr;
+  }
+
+  .subject-grid {
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:500px) {
+  .specialties {
+    grid-template-columns:1fr;
+  }
+}

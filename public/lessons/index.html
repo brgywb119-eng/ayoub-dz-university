@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الدروس | Ayoub DZ University</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f3f6fa;
+color:#172033
+}
+
+header{
+background:#123c69;
+color:white;
+padding:30px 15px;
+text-align:center
+}
+
+header h1{margin:0 0 8px}
+
+main{
+max-width:1050px;
+margin:auto;
+padding:20px
+}
+
+.search{
+width:100%;
+padding:16px;
+border:0;
+border-radius:12px;
+font-size:16px;
+margin-bottom:25px;
+box-shadow:0 3px 12px #0001
+}
+
+.specialty{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:18px;
+box-shadow:0 3px 12px #0001
+}
+
+.specialty h2{
+color:#123c69;
+margin-top:0
+}
+
+.subjects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:12px
+}
+
+.subject{
+display:block;
+background:#eef5ff;
+padding:18px;
+border-radius:13px;
+text-decoration:none;
+color:#172033;
+border:1px solid #d9e8f8;
+transition:.2s
+}
+
+.subject:hover{
+transform:translateY(-2px);
+background:#dfeeff
+}
+
+.subject b{
+display:block;
+font-size:17px;
+color:#123c69;
+margin-bottom:5px
+}
+
+.subject span{
+font-size:14px;
+color:#667085
+}
+
+.back{
+display:inline-block;
+background:white;
+color:#123c69;
+padding:10px 16px;
+border-radius:10px;
+text-decoration:none;
+margin-bottom:20px
+}
+
+.hidden{display:none}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📚 مكتبة الدروس الجامعية</h1>
+<p>Ayoub DZ University 🇩🇿</p>
+</header>
+
+<main>
+
+<a class="back" href="/">⬅ العودة للرئيسية</a>
+
+<input
+id="search"
+class="search"
+type="text"
+placeholder="🔎 ابحث عن تخصص أو مادة أو درس..."
+>
+
+<!-- SNV -->
+<section class="specialty">
+<h2>🧬 علوم الطبيعة والحياة</h2>
+
+<div class="subjects">
+
+<a class="subject" href="/lessons/lesson.html?id=cellule">
+<b>🧫 Biologie cellulaire</b>
+<span>مقدمة في الخلية والعضيات والغشاء البلازمي</span>
+</a>
+
+<a class="subject" href="/lessons/lesson.html?id=chimie">
+<b>⚗️ Chimie générale</b>
+<span>المادة والذرة والعناصر والمركبات</span>
+</a>
+
+<a class="subject" href="/lessons/lesson.html?id=math">
+<b>📐 Mathématiques</b>
+<span>الدوال والمفاهيم الرياضية الأساسية</span>
+</a>
+
+</div>
+</section>
+
+
+<!-- MI -->
+<section class="specialty">
+<h2>💻 رياضيات وإعلام آلي</h2>
+
+<div class="subjects">
+
+<a class="subject" href="/lessons/lesson.html?id=math">
+<b>📐 Mathématiques</b>
+<span>الدوال والحسابات الأساسية</span>
+</a>
+
+<a class="subject" href="/lessons/lesson.html?id=informatique">
+<b>💻 Informatique</b>
+<span>مقدمة في الخوارزميات والمتغيرات والشروط</span>
+</a>
+
+</div>
+</section>
+
+
+<!-- ST -->
+<section class="specialty">
+<h2>⚙️ علوم وتكنولوجيا</h2>
+
+<div class="subjects">
+
+<a class="subject" href="/lessons/lesson.html?id=mecanique">
+<b>⚙️ Mécanique</b>
+<span>القوى والحركة وقانون نيوتن</span>
+</a>
+
+<a class="subject" href="/lessons/lesson.html?id=physique">
+<b>🔬 Physique</b>
+<span>الحركة والسرعة</span>
+</a>
+
+<a class="subject" href="/lessons/lesson.html?id=chimie">
+<b>⚗️ Chimie</b>
+<span>أساسيات الكيمياء العامة</span>
+</a>
+
+</div>
+</section>
+
+
+<!-- SM -->
+<section class="specialty">
+<h2>⚛️ علوم المادة</h2>
+
+<div class="subjects">
+
+<a class="subject" href="/lessons/lesson.html?id=physique">
+<b>🔬 Physique</b>
+<span>الحركة والسرعة والمفاهيم الأساسية</span>
+</a>
+
+<a class="subject" href="/lessons/lesson.html?id=chimie">
+<b>⚗️ Chimie</b>
+<span>الذرة والمادة والتحولات</span>
+</a>
+
+</div>
+</section>
+
+
+<!-- DROIT -->
+<section class="specialty">
+<h2>⚖️ حقوق وعلوم سياسية</h2>
+
+<div class="subjects">
+
+<a class="subject" href="/lessons/lesson.html?id=droit">
+<b>⚖️ مدخل إلى القانون</b>
+<span>مفهوم القانون والقاعدة القانونية</span>
+</a>
+
+</div>
+</section>
+
+
+<!-- ECONOMIE -->
+<section class="specialty">
+<h2>📊 اقتصاد وعلوم التسيير</h2>
+
+<div class="subjects">
+
+<a class="subject" href="/lessons/lesson.html?id=economie">
+<b>📊 مدخل إلى الاقتصاد</b>
+<span>الندرة والعرض والطلب</span>
+</a>
+
+</div>
+</section>
+
+
+<!-- SHS -->
+<section class="specialty">
+<h2>🧠 علوم إنسانية واجتماعية</h2>
+
+<div class="subjects">
+
+<a class="subject" href="/lessons/lesson.html?id=psychologie">
+<b>🧠 علم النفس</b>
+<span>مدخل إلى علم النفس والسلوك والتعلم</span>
+</a>
+
+</div>
+</section>
+
+
+<!-- LANGUES -->
+<section class="specialty">
+<h2>📖 آداب ولغات</h2>
+
+<div class="subjects">
+
+<a class="subject" href="/lessons/lesson.html?id=anglais">
+<b>🇬🇧 English</b>
+<span>Academic English Basics</span>
+</a>
+
+</div>
+</section>
+
+</main>
+
+<script>
+const search=document.getElementById("search");
+
+search.addEventListener("input",()=>{
+const value=search.value.toLowerCase().trim();
+
+document.querySelectorAll(".specialty").forEach(section=>{
+let text=section.innerText.toLowerCase();
+
+section.classList.toggle(
+"hidden",
+value && !text.includes(value)
+);
+});
+});
+</script>
+
+</body>
+</html>

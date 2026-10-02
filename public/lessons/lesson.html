@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الدرس | Ayoub DZ University</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f3f6fa;
+color:#172033;
+line-height:2
+}
+
+header{
+background:#123c69;
+color:white;
+padding:35px 15px;
+text-align:center
+}
+
+header h1{
+margin:0;
+font-size:28px
+}
+
+main{
+max-width:950px;
+margin:auto;
+padding:20px
+}
+
+.back{
+display:inline-block;
+background:#123c69;
+color:white;
+padding:10px 18px;
+border-radius:10px;
+text-decoration:none;
+margin-bottom:20px
+}
+
+.card{
+background:white;
+padding:25px;
+margin:18px 0;
+border-radius:18px;
+box-shadow:0 4px 15px #0001
+}
+
+.card h2{
+color:#123c69;
+border-bottom:2px solid #e8eef5;
+padding-bottom:10px
+}
+
+.card h3{
+color:#1769aa
+}
+
+.example{
+background:#eef6ff;
+padding:18px;
+border-right:5px solid #1769aa;
+border-radius:10px;
+margin:15px 0
+}
+
+.formula{
+background:#111827;
+color:white;
+padding:16px;
+border-radius:10px;
+text-align:center;
+font-size:20px;
+margin:15px 0
+}
+
+.summary{
+background:#ecfdf3;
+border-right:5px solid #159447
+}
+
+.exercise{
+background:#fff8e6;
+border-right:5px solid #e5a900
+}
+
+.answer{
+background:#f4f4f5;
+padding:15px;
+border-radius:10px;
+margin-top:10px
+}
+
+.diagram{
+background:#eef5ff;
+padding:25px;
+border-radius:15px;
+text-align:center;
+margin:20px 0
+}
+
+.box{
+display:inline-block;
+padding:18px;
+margin:7px;
+border-radius:12px;
+background:#dbeafe;
+font-weight:bold
+}
+
+@media(max-width:600px){
+main{padding:12px}
+.card{padding:18px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1 id="title">📚 الدرس</h1>
+<p id="info"></p>
+</header>
+
+<main>
+
+<a class="back" href="/lessons/">⬅ العودة إلى مكتبة الدروس</a>
+
+<div id="content"></div>
+
+</main>
+
+<script src="/lessons/data.js"></script>
+
+<script>
+
+const id=new URLSearchParams(location.search).get("id");
+const lesson=LESSONS[id];
+
+if(!lesson){
+
+document.getElementById("content").innerHTML=`
+<div class="card">
+<h2>❌ الدرس غير موجود</h2>
+<p>الدرس المطلوب غير موجود في المكتبة.</p>
+</div>`;
+
+}else{
+
+document.title=lesson.title+" | Ayoub DZ University";
+
+document.getElementById("title").textContent="📖 "+lesson.title;
+
+document.getElementById("info").textContent=
+lesson.specialty+" — "+lesson.level+
+(lesson.semester ? " — "+lesson.semester : "");
+
+let html="";
+
+if(lesson.introduction){
+
+html+=`
+<div class="card">
+<h2>📚 مقدمة</h2>
+<p>${lesson.introduction}</p>
+</div>`;
+}
+
+lesson.chapters.forEach((chapter,index)=>{
+
+html+=`
+<div class="card">
+
+<h2>الفصل ${index+1}: ${chapter.title}</h2>
+
+${chapter.sections.map(section=>`
+
+<h3>${section.title}</h3>
+
+<div>
+${section.body}
+</div>
+
+`).join("")}
+
+</div>`;
+
+});
+
+if(lesson.summary){
+
+html+=`
+<div class="card summary">
+<h2>📝 الملخص المكثف</h2>
+<ul>
+${lesson.summary.map(x=>`<li>${x}</li>`).join("")}
+</ul>
+</div>`;
+}
+
+if(lesson.exercises){
+
+html+=`
+<div class="card exercise">
+<h2>🧠 تمارين</h2>
+
+${lesson.exercises.map((x,i)=>`
+
+<div>
+<b>تمرين ${i+1}:</b>
+<p>${x.question}</p>
+
+${x.answer ? `
+<details>
+<summary>إظهار الحل</summary>
+<div class="answer">${x.answer}</div>
+</details>
+`:""}
+
+</div>
+
+<hr>
+
+`).join("")}
+
+</div>`;
+}
+
+if(lesson.quiz){
+
+html+=`
+<div class="card">
+<h2>🎯 اختبار سريع</h2>
+<ol>
+${lesson.quiz.map(x=>`<li>${x}</li>`).join("")}
+</ol>
+</div>`;
+}
+
+document.getElementById("content").innerHTML=html;
+
+}
+
+</script>
+
+</body>
+</html>
